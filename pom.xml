@@ -34,6 +34,7 @@
     <properties>
         <!-- github server corresponds to entry in ~/.m2/settings.xml -->
         <github.global.server>github</github.global.server>
+        <github-branch>snapshots-mvn-repo</github-branch>
         <maven.compile.source>1.7</maven.compile.source>
         <maven.compile.target>1.7</maven.compile.target>
         <powermock.version>1.5.5</powermock.version>
@@ -160,6 +161,18 @@
 
     <profiles>
         <profile>
+            <id>snapshot</id>
+            <properties>
+                <github-branch>snapshots-mvn-repo</github-branch>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <properties>
+                <github-branch>releases-mvn-repo</github-branch>
+            </properties>
+        </profile>
+        <profile>
             <id>live</id>
             <build>
                 <plugins>
@@ -233,10 +246,11 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.11</version>
                 <configuration>
+                    <merge>true</merge>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-                    <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+                    <branch>refs/heads/${github-branch}</branch>                       <!-- remote branch name -->
                     <includes><include>**/*</include></includes>
                     <repositoryName>jcloud-vsphere</repositoryName>      <!-- github repo name -->
                     <repositoryOwner>igreenfield</repositoryOwner>    <!-- github username  -->
