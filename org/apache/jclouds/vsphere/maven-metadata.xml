@@ -4,8 +4,8 @@
   <artifactId>vsphere</artifactId>
   <versioning>
     <versions>
-      <version>2.0.0-SNAPSHOT</version>
+      <version>1.7.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20150203195753</lastUpdated>
+    <lastUpdated>20150219100300</lastUpdated>
   </versioning>
 </metadata>
