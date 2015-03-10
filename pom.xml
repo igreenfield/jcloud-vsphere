@@ -26,6 +26,7 @@
         <version>2.0.0-SNAPSHOT</version>
     </parent>
 
+    <groupId>jclouds.external.api</groupId>
     <artifactId>vsphere</artifactId>
     <name>jclouds vSphere api</name>
     <description>jclouds components to access an implementation of VMWare vSphere.</description>
