@@ -278,7 +278,7 @@ public class VirtualMachineToNodeMetadata implements Function<VirtualMachine, No
                originalKey = virtualPortBackingInfo.getPort().getPortgroupKey();
                for (ManagedEntity entity : virtualPortgroups) {
                   virtualPortgroup = (DistributedVirtualPortgroup) entity;
-                  if (virtualPortgroup.getKey() != originalKey) {
+                  if (!virtualPortgroup.getKey().equals(originalKey)) {
                      break;
                   }
                }
