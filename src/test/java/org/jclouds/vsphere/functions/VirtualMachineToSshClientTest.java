@@ -47,7 +47,6 @@ public class VirtualMachineToSshClientTest {
             return createNiceMock(SshClient.class);
          }
 
-         @Override
          public boolean isAgentAvailable() {
             return false;
          }
